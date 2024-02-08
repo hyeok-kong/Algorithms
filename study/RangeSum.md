@@ -7,3 +7,4 @@
 - [구간 합 구하기 4(11659)](https://github.com/hyeok-kong/Algorithms/tree/main/%EB%B0%B1%EC%A4%80/Bronze/11720.%E2%80%85%EC%88%AB%EC%9E%90%EC%9D%98%E2%80%85%ED%95%A9)
 - [구간 합 구하기 5(11660)](https://github.com/hyeok-kong/Algorithms/tree/main/%EB%B0%B1%EC%A4%80/Silver/11660.%E2%80%85%EA%B5%AC%EA%B0%84%E2%80%85%ED%95%A9%E2%80%85%EA%B5%AC%ED%95%98%EA%B8%B0%E2%80%855)
 
+- [나머지 합(10986)](https://github.com/hyeok-kong/Algorithms/tree/main/%EB%B0%B1%EC%A4%80/Gold/10986.%E2%80%85%EB%82%98%EB%A8%B8%EC%A7%80%E2%80%85%ED%95%A9) 패배.. 다시 봐야함
