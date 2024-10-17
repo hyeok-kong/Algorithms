@@ -3,32 +3,37 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int N = sc.nextInt();
-        sc.nextLine();
-        int[] nums = Arrays.stream(sc.nextLine().split(" ")).mapToInt(Integer::parseInt).toArray();
+        int count = 0;
+        int n = sc.nextInt();
+        int[] nums = new int[n];
+        for (int i=0;i<n;i++) {
+            nums[i] = sc.nextInt();
+        }
 
         Arrays.sort(nums);
 
-        int start, end, num, sum, count = 0;
-        for (int n=0;n<N;n++) {
-            num = nums[n];
+        long target;
+        int start, end;
+
+        for (int i=0;i<n;i++) {
+            target = nums[i];
             start = 0;
-            end = N-1;
+            end = n-1;
+
             while (start < end) {
-                sum = nums[start] + nums[end];
-                if (sum == num) {
-                    if (start == n) {
-                        start++;
-                    } else if (end == n) {
-                        end--;
-                    } else {
+                if (target == nums[start] + nums[end]) {
+                    if (start != i && end != i) {
                         count++;
                         break;
+                    } else if (start == i) {
+                        start++;
+                    } else if (end == i) {
+                        end--;
                     }
-                } else if (sum < num) {
-                    start++;
-                } else {
+                } else if (target < nums[start] + nums[end]) {
                     end--;
+                } else {
+                    start++;
                 }
             }
         }
