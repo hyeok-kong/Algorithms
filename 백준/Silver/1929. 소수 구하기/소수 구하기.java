@@ -1,25 +1,27 @@
+import java.io.*;
 import java.util.*;
 
 public class Main {
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int M = sc.nextInt();
-        int N = sc.nextInt();
-        int[] array = new int[N+1];
+        int start = sc.nextInt();
+        int end = sc.nextInt();
+        boolean[] nums = new boolean[end+1];
 
-        for (int i=2;i<=N;i++) {
-            array[i] = i;
-        }
-
-        for (int i=2;i<=Math.sqrt(N);i++) {
-            if (array[i] == 0) continue;
-            for (int j=i*2;j<=N;j+=i) {
-                array[j] = 0;
+        nums[1] = true;
+        for (int i=2;i<=Math.sqrt(end);i++) {
+            if (!nums[i]) {
+                for (int j=i*2;j<=end;j+=i) {
+                    nums[j] = true;
+                }
             }
         }
 
-        for (int i=M;i<=N;i++) {
-            if (array[i] != 0) System.out.println(array[i]);
+        for (int i=start;i<=end;i++) {
+            if (!nums[i]) {
+                System.out.println(i);
+            }
         }
     }
 }
