@@ -1,25 +1,28 @@
+import java.io.*;
 import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        String input = sc.nextLine();
+        String exp = sc.nextLine();
 
-        String[] split = input.split("-");
-        int result = sum(split[0]);
-        for (int i=1; i<split.length; i++) {
-            result -= sum(split[i]);
+        String[] majorExp = exp.split("-");
+
+        int result = sum(majorExp[0]);
+        for (int i=1;i<majorExp.length;i++) {
+            result -= sum(majorExp[i]);
         }
 
         System.out.println(result);
     }
 
-    public static int sum(String exp) {
-        String[] split = exp.split("[+]");
-        int sum = 0;
-        for (int i=0;i<split.length;i++) {
-            sum += Integer.parseInt(split[i]);
+    private static int sum(String exp) {
+        int result = 0;
+        String[] split = exp.split("\\+");
+
+        for (String s : split) {
+            result += Integer.parseInt(s);
         }
-        return sum;
+        return result;
     }
 }
